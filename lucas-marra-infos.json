@@ -1,0 +1,29 @@
+{
+  "name": "Lucas Paulino Marra",
+  "age": 25,
+  "contacts": [
+    { "phone": "61998856381" },
+    { "email": "marralucas1@gmail.com" }
+  ],
+  "country": "Brazil",
+  "stack": "Front-End",
+  "educational": [
+    { "college": "UniCEUB", "course": "Systems Analysis and Development" }
+  ],
+  "technologies": [
+    { "name": "HTML5", "experience": "3 years" },
+    { "name": "CSS3", "experience": "3 years" },
+    { "name": "Javascript", "experience": "2 years" },
+    { "name": "Vue.Js", "experience": "2 years" },
+    { "name": "SASS", "experience": "1 year" },
+    { "name": "PHP", "experience": "1 year" },
+    { "name": "Ruby on Rails", "experience": "0.5 year" },
+    { "name": "Protheus", "experience": "0.7 year" },
+    { "name": "Bootstrap", "experience": "2 years" },
+    { "name": "Tailwind", "experience": "0.5 year" }
+  ],
+  "socialMedia": [
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/lucas-marra/" },
+    { "name": "GitHub", "url": "https://github.com/lucaspmarra" }
+  ]
+}
