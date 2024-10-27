@@ -76,10 +76,10 @@ jobs:
         run: pnpm build
 
       - name: Deploy 🚀
-        permissions:
-          contents: write
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACTION_TOKEN  }}
           BRANCH: gh-pages
           FOLDER: dist
+          permissions:
+          contents: write
