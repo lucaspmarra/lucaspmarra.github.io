@@ -1,3 +1,14 @@
+<script setup>
+import { onMounted } from 'vue'
+import LocaleChanger from '@/components/LocaleChanger.vue'
+
+function downloadItem(url) {
+  window.open(url, '_blank')
+}
+
+onMounted(async () => {})
+</script>
+
 <template>
   <div class="min-h-screen bg-[#D9E6F6]">
     <!-- Barra superior -->
@@ -21,13 +32,6 @@
             </div>
           </div>
         </nav>
-        <div class="w-full md:w-auto md:ml-auto">
-          <a
-            href="mailto:marralucas1@gmail.com"
-            class="text-white text-sm hover:text-gray-200"
-            >marralucas1@gmail.com</a
-          >
-        </div>
       </div>
     </header>
 
@@ -68,6 +72,9 @@
               >
                 <span class="mr-1">📝</span> {{ $t('resume') }}
               </a>
+            </div>
+            <div class="mt-4">
+              <LocaleChanger />
             </div>
           </div>
         </div>
@@ -378,13 +385,3 @@
     </main>
   </div>
 </template>
-
-<script setup>
-import { onMounted } from 'vue'
-
-function downloadItem(url) {
-  window.open(url, '_blank')
-}
-
-onMounted(async () => {})
-</script>
