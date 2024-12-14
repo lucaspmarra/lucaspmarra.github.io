@@ -9,26 +9,15 @@
           <div class="flex flex-wrap gap-2 text-sm text-white">
             <div class="flex items-center">
               <span class="mr-1">💼</span>
-              <span>3+ anos de experiência</span>
+              <span>{{ $t('experience_time') }}</span>
             </div>
             <div class="flex items-center">
               <span class="mr-1">🚀</span>
-              <span>10+ projetos</span>
+              <span>{{ $t('project_quantity') }}</span>
             </div>
             <div class="flex items-center">
               <span class="mr-1">💻</span>
-              <span>15+ tecnologias</span>
-            </div>
-            <div v-if="loading" role="status">
-              <svg aria-hidden="true" class="w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-              </svg>
-              <span class="sr-only">Loading...</span>
-            </div>
-            <div v-else class="flex items-center">
-              <span class="mr-1">📈</span>
-              <span>Total de Visitantes: {{ visitor_count ? visitor_count : '-' }}</span>
+              <span>{{ $t('stack_quantity') }}</span>
             </div>
           </div>
         </nav>
@@ -49,7 +38,7 @@
           <div class="bg-white border border-gray-300 p-2">
             <img
               src="/profile.jpg"
-              alt="Profile"
+              :alt="$t('profile_photo_alt_text')"
               class="w-full max-w-[200px] lg:max-w-none mx-auto mb-2"
             />
             <h2 class="text-[#3B5998] text-sm font-bold mb-2">
@@ -59,7 +48,7 @@
               Front-End Developer, Vue.js, Javascript, Node.js, Nuxt, Quasar,
               NestJS, AgGrid
               <br />
-              Brasil
+              {{ $t('country') }}
             </div>
             <div class="mt-4 border-t pt-2">
               <a
@@ -67,7 +56,7 @@
                 target="_blank"
                 class="flex items-center text-xs text-[#3B5998] hover:underline"
               >
-                <span class="mr-1">👤</span> + amigo
+                <span class="mr-1">👤</span> {{ $t('add_friend') }}
               </a>
               <a
                 @click="
@@ -77,7 +66,7 @@
                 "
                 class="flex items-center text-xs text-[#3B5998] hover:underline mt-2 cursor-pointer"
               >
-                <span class="mr-1">📝</span> currículo
+                <span class="mr-1">📝</span> {{ $t('resume') }}
               </a>
             </div>
           </div>
@@ -93,60 +82,58 @@
               sobre
             </h3>
             <div class="p-2 space-y-2">
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">sobre:</span>
-                <span
-                  >Graduado em Análise e Desenvolvimento de Sistemas pelo
-                  UniCEUB, participei do desenvolvimento do Centro de
-                  Atendimento Comunitário do CEUB.</span
-                >
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600">{{ $t('about_title') }}</span>
+                <span>{{ $t('about_message') }}</span>
               </div>
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">atuação:</span>
-                <span
-                  >Minha área de trabalho preferencial abrange Desenvolvimento
-                  Frontend, Tecnologias Web e Desenvolvimento Mobile
-                  (Flutter).</span
-                >
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600">{{ $t('stack_title') }}</span>
+                <span>{{ $t('stack_message') }}</span>
               </div>
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">apresentação:</span>
-                <span
-                  >Tenho experiência profissional com HTML, CSS, Javascript,
-                  OOP, REST APIs, GraphQL, JSON, Vue.js, Nuxt, Quasar, Node.js,
-                  Express e Nest. Além disso, possuo conhecimento em Oracle,
-                  MySQL e PostgreSQL, com ênfase em Raw Querys. Trabalhei com o
-                  ERP Protheus em diversos módulos, incluindo SIGACOM, SIGAFAT,
-                  SIGAFIN, SIGAEST, SIGACFG e APSDU. Também atuei no atendimento
-                  N3 aos usuários e tenho familiaridade com SEO, Google Search
-                  Console e Google Analytics. Além disso, criei microfrontends e
-                  componentes modulares em Vue e trabalhei com Ag-Grid e
-                  Ag-Charts.</span
-                >
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600">{{
+                  $t('presentation_title')
+                }}</span>
+                <span>{{ $t('presentation_message') }}</span>
               </div>
 
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">telefone:</span>
-                <span>+55 (61) 99885 6361</span>
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600"
+                  >{{ $t('mobile_phone_title') }}:</span
+                >
+                <span
+                  ><a
+                    class="transition-all duration-300 ease-in-out hover:underline hover:text-blue-400"
+                    href="tel:+5561998856381"
+                  >
+                    +55 (61) 99885 6361
+                  </a>
+                </span>
               </div>
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">e-mail:</span>
-                <span>marralucas1@gmail.com</span>
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600">{{ $t('email_title') }}</span>
+                <span
+                  ><a
+                    class="transition-all duration-300 ease-in-out hover:underline hover:text-blue-400"
+                    href="mailto:marralucas1@gmail.com"
+                    >marralucas1@gmail.com</a
+                  ></span
+                >
               </div>
-              <div class="grid grid-cols-[150px,1fr] text-sm">
-                <span class="text-gray-600">referências:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
+                <span class="text-gray-600">{{ $t('reference_title') }}</span>
 
                 <ul class="text-sm">
                   <li>
-                    Sérgio Cozzetti Bertoldi de Souza - Gerente de
-                    Desenvolvimento de Software no UniCEUB
+                    Sérgio Cozzetti Bertoldi de Souza -
+                    {{ $t('reference_one') }}
                   </li>
                   <li>
-                    Alexandre Einstein Barcelos Cunha - Chefe de Seção e
-                    Analista Desenvolvedor no TRE-GO
+                    Alexandre Einstein Barcelos Cunha -
+                    {{ $t('reference_two') }}
                   </li>
                   <li>
-                    Ramon de Freitas Elias Campos - Assessoria PJe no TRE-GO
+                    Ramon de Freitas Elias Campos - {{ $t('reference_three') }}
                   </li>
                 </ul>
               </div>
@@ -156,74 +143,74 @@
           <!-- Experiência Profissional -->
           <div class="mb-4">
             <h3 class="text-[#3B5998] bg-[#E8EEF7] p-2 text-sm font-bold">
-              experiência profissional
+              {{ $t('job_experience') }}
             </h3>
             <div class="p-2 space-y-4">
               <div class="border-[#3B5998]">
                 <h4 class="font-bold">ANGULAR E-COMMERCE</h4>
                 <p class="text-sm text-gray-600">
-                  Desenvolvedor Frontend (Jul 2023 - Presente)
+                  {{ $t('job_experience_angular_message') }}
                 </p>
                 <ul class="text-sm mt-2">
-                  <li>Desenvolvimento de Dashboards WhiteLabel multi-tenant</li>
+                  <li>{{ $t('job_experience_angular_message_two') }}</li>
                   <li>
-                    Implementação de interfaces com Vue 2/3, Quasar e TypeScript
+                    {{ $t('job_experience_angular_message_three') }}
                   </li>
                   <li>
-                    Integração de tabelas e gráficos com Ag-Grid/Ag-Charts
+                    {{ $t('job_experience_angular_message_four') }}
                   </li>
-                  <li>Criação de módulos Vue para CMS (Webflow, WordPress)</li>
+                  <li>{{ $t('job_experience_angular_message_five') }}</li>
                 </ul>
               </div>
 
               <div class="border-[#3B5998]">
                 <h4 class="font-bold">ILHA SERVICE TECNOLOGIA LTDA</h4>
                 <p class="text-sm text-gray-600">
-                  Desenvolvedor Web (Nov 2020 - Jul 2023)
+                  {{ $t('job_experience_ilha_message_one') }}
                 </p>
                 <ul class="text-sm mt-2">
-                  <li>Desenvolvimento de Microfrontends para TRE-GO</li>
+                  <li>{{ $t('job_experience_ilha_message_two') }}</li>
                   <li>
-                    Criação de APIs REST com Node.js, Express e Java Spring
+                    {{ $t('job_experience_ilha_message_three') }}
                   </li>
-                  <li>Implementação de consultas em Oracle DB</li>
-                  <li>Manutenção de sistemas legados e suporte N3</li>
+                  <li>{{ $t('job_experience_ilha_message_four') }}</li>
+                  <li>{{ $t('job_experience_ilha_message_five') }}</li>
                 </ul>
               </div>
 
               <div class="border-[#3B5998]">
                 <h4 class="font-bold">PAVO TECNOLOGIA</h4>
                 <p class="text-sm text-gray-600">
-                  Auxiliar de Suporte Técnico Jr (Jan 2020 - Abr 2020)
+                  {{ $t('job_experience_pavo_message_one') }}
                 </p>
                 <ul class="text-sm mt-2">
-                  <li>Suporte N1 ao ERP Protheus (TOTVS)</li>
-                  <li>Desenvolvimento de templates para workflows</li>
-                  <li>Frontend para canal de Denúncias</li>
+                  <li>{{ $t('job_experience_pavo_message_two') }}</li>
+                  <li>{{ $t('job_experience_pavo_message_three') }}</li>
+                  <li>{{ $t('job_experience_pavo_message_four') }}</li>
                 </ul>
               </div>
 
               <div class="border-[#3B5998]">
                 <h4 class="font-bold">TOTVS</h4>
                 <p class="text-sm text-gray-600">
-                  Trainee Analista de Implantação (Mar 2019 - Ago 2019)
+                  {{ $t('job_experience_totvs_message_one') }}
                 </p>
                 <ul class="text-sm mt-2">
-                  <li>Implantação de módulos ERP Protheus</li>
-                  <li>Configuração de SIGACOM, SIGAFAT, SIGAFIN</li>
-                  <li>Parametrização de sistemas</li>
+                  <li>{{ $t('job_experience_totvs_message_two') }}</li>
+                  <li>{{ $t('job_experience_totvs_message_three') }}</li>
+                  <li>{{ $t('job_experience_totvs_message_four') }}</li>
                 </ul>
               </div>
 
               <div class="border-[#3B5998]">
                 <h4 class="font-bold">VP CONCURSOS</h4>
                 <p class="text-sm text-gray-600">
-                  Estagiário em Suporte Técnico (Set 2018 - Mar 2019)
+                  {{ $t('job_experience_vp_message_one') }}
                 </p>
                 <ul class="text-sm mt-2">
-                  <li>Análise de dados com Google Analytics</li>
-                  <li>Otimização de SEO para Landing Pages</li>
-                  <li>Manutenção de sistemas legados</li>
+                  <li>{{ $t('job_experience_vp_message_two') }}</li>
+                  <li>{{ $t('job_experience_vp_message_three') }}</li>
+                  <li>{{ $t('job_experience_vp_message_four') }}</li>
                 </ul>
               </div>
             </div>
@@ -232,17 +219,17 @@
           <!-- Formação -->
           <div class="mb-4">
             <h3 class="text-[#3B5998] bg-[#E8EEF7] p-2 text-sm font-bold">
-              formação
+              {{ $t('education') }}
             </h3>
             <div class="p-2">
               <div class="text-sm">
                 <h4 class="font-bold">
-                  UniCEUB - Centro Universitário de Brasília
+                  {{ $t('education_text') }}
                 </h4>
                 <p class="text-gray-600">
-                  Análise e Desenvolvimento de Sistemas
+                  {{ $t('education_course') }}
                 </p>
-                <p class="text-gray-500">Conclusão: 2019</p>
+                <p class="text-gray-500">{{ $t('education_conclusion') }}</p>
               </div>
             </div>
           </div>
@@ -252,7 +239,9 @@
         <div class="w-full lg:w-[25%] lg:flex-shrink-0">
           <!-- Stack técnico -->
           <div class="bg-white border border-gray-300 p-2 mb-4">
-            <h3 class="text-[#3B5998] font-bold text-sm mb-2">stack técnico</h3>
+            <h3 class="text-[#3B5998] font-bold text-sm mb-2">
+              {{ $t('stack_names') }}
+            </h3>
             <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-2">
               <div class="flex mt-1">
                 <span class="bg-blue-100 px-1 rounded">Vue.js</span>
@@ -296,7 +285,7 @@
           <!-- Projetos públicos -->
           <div class="bg-white border border-gray-300 p-2 mb-4">
             <h3 class="text-[#3B5998] font-bold text-sm mb-2">
-              projetos públicos destacados
+              {{ $t('public_projects') }}
             </h3>
             <div class="space-y-2">
               <div class="text-xs p-2 border rounded">
@@ -305,11 +294,10 @@
                   target="_blank"
                   class="font-bold cursor-pointer"
                 >
-                  Sistema de Agendamento de Exames - UniCEUB
+                  {{ $t('public_projects_one') }}
                 </a>
                 <p class="text-gray-600">
-                  Projeto iniciado em conjunto com o UniCEUB para agilizar o
-                  agendamento de exames escola médica do CEUB.
+                  {{ $t('public_projects_one_text') }}
                 </p>
                 <div class="flex gap-1 mt-1">
                   <span class="bg-blue-100 px-1 rounded">HTML</span>
@@ -324,10 +312,10 @@
                   href="https://apps.tre-go.jus.br/central-de-sistemas/#/"
                   target="_blank"
                   class="font-bold cursor-pointer"
-                  >Central de Sistemas TRE-GO</a
+                  >{{ $t('public_projects_two') }}</a
                 >
                 <p class="text-gray-600">
-                  Microfrontend para gestão de acesso e informações de sistemas.
+                  {{ $t('public_projects_two_text') }}
                 </p>
                 <div class="flex gap-1 mt-1">
                   <span class="bg-blue-100 px-1 rounded">Vue</span>
@@ -337,9 +325,11 @@
               </div>
 
               <div class="text-xs p-2 border rounded">
-                <h4 class="font-bold cursor-pointer">Teleatendimento TRE-GO</h4>
+                <h4 class="font-bold cursor-pointer">
+                  {{ $t('public_projects_three') }}
+                </h4>
                 <p class="text-gray-600">
-                  Microfrontend para gestão de contatos dos Cartórios Eleitorais
+                  {{ $t('public_projects_three_text') }}
                 </p>
                 <div class="flex gap-1 mt-1">
                   <span class="bg-blue-100 px-1 rounded">Vue</span>
@@ -353,11 +343,10 @@
                   href="https://apps.tre-go.jus.br/central-de-indicadores/#/"
                   target="_blank"
                   class="font-bold cursor-pointer"
-                  >Central de Indicadores TRE-GO</a
+                  >{{ $t('public_projects_four') }}</a
                 >
                 <p class="text-gray-600">
-                  Microfrontend informativo para visualização de painéis de BI
-                  do Tribunal.
+                  {{ $t('public_projects_four_text') }}
                 </p>
                 <div class="flex gap-1 mt-1">
                   <span class="bg-blue-100 px-1 rounded">Vue</span>
@@ -371,11 +360,10 @@
                   href="https://apps.tre-go.jus.br/contato-zonas/"
                   target="_blank"
                   class="font-bold cursor-pointer"
-                  >Contato Zonas Eleitorais de Goiás TRE-GO</a
+                  >{{ $t('public_projects_five') }}</a
                 >
                 <p class="text-gray-600">
-                  Microfrontend para gestão de contato entre Eleitores e Zonas
-                  Eleitorais.
+                  {{ $t('public_projects_five_text') }}
                 </p>
                 <div class="flex gap-1 mt-1">
                   <span class="bg-blue-100 px-1 rounded">Vue</span>
@@ -389,33 +377,14 @@
       </div>
     </main>
   </div>
-
 </template>
 
 <script setup>
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
-
-const visitor_count = ref()
-const loading = ref(false);
+import { onMounted } from 'vue'
 
 function downloadItem(url) {
   window.open(url, '_blank')
 }
 
-async function getVisitorCount() {
-  try {
-    loading.value = true;
-    const response = await axios.get('https://counter-api-prg8.onrender.com/api/visitor')
-    visitor_count.value = response.data.count
-  } catch (error) {
-    console.error('Erro ao obter contagem de visitantes:', error)
-  } finally {
-    loading.value = false;
-  }
-}
-
-onMounted(async () => {
-  await getVisitorCount()
-})
+onMounted(async () => {})
 </script>
