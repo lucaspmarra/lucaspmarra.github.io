@@ -14,7 +14,6 @@ env:
   VITE_TOLGEE_API_URL: ${{ secrets.VITE_TOLGEE_API_URL }}
   VITE_TOLGEE_PROJECT_ID: ${{ secrets.VITE_TOLGEE_PROJECT_ID }}
   VITE_TOLGEE_API_KEY: ${{ secrets.VITE_TOLGEE_API_KEY }}
-
 jobs:
   import_base:
     runs-on: ubuntu-latest
@@ -36,6 +35,10 @@ jobs:
           fi
 
       - name: Import to Tolgee
+        env:
+          VITE_TOLGEE_API_URL: ${{ secrets.VITE_TOLGEE_API_URL }}
+          VITE_TOLGEE_PROJECT_ID: ${{ secrets.VITE_TOLGEE_PROJECT_ID }}
+          VITE_TOLGEE_API_KEY: ${{ secrets.VITE_TOLGEE_API_KEY }}
         run: |
           echo "Importando o arquivo pt-BR.json para o Tolgee."
           FILE_PATH="src/i18n/pt-BR.json"
@@ -135,6 +138,10 @@ jobs:
           run_install: false
 
       - name: Configurar arquivo .env
+        env:
+          VITE_TOLGEE_API_URL: ${{ secrets.VITE_TOLGEE_API_URL }}
+          VITE_TOLGEE_PROJECT_ID: ${{ secrets.VITE_TOLGEE_PROJECT_ID }}
+          VITE_TOLGEE_API_KEY: ${{ secrets.VITE_TOLGEE_API_KEY }}
         run: |
           echo "VITE_TOLGEE_API_URL=${{ secrets.VITE_TOLGEE_API_URL }}" >> .env
           echo "VITE_TOLGEE_PROJECT_ID=${{ secrets.VITE_TOLGEE_PROJECT_ID }}" >> .env
