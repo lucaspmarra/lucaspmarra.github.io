@@ -27,6 +27,24 @@ document.addEventListener('click', e => {
 })
 
 onMounted(() => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const langParam = urlParams.get('lang')
+
+  if (langParam) {
+    const validLocales = ['en-US', 'es-ES', 'pt-BR', 'pt-PT']
+    if (validLocales.includes(langParam)) {
+      const defaultCountry = country_codes.value.find(
+        country => country.name === langParam
+      )
+      if (defaultCountry) {
+        selected_country.value = defaultCountry
+        locale.value = defaultCountry.name
+        localStorage.setItem('preferred_language', defaultCountry.name)
+        return
+      }
+    }
+  }
+
   const savedLocale = localStorage.getItem('preferred_language')
   if (savedLocale) {
     const defaultCountry = country_codes.value.find(

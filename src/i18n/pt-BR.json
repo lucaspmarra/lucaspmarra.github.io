@@ -56,5 +56,11 @@
   "public_projects_four": "Central de Indicadores TRE-GO",
   "public_projects_four_text": "Microfrontend informativo para visualização de painéis de BI do Tribunal.",
   "public_projects_five": "Contato Zonas Eleitorais de Goiás TRE-GO",
-  "public_projects_five_text": "Microfrontend para gestão de contato entre Eleitores e Zonas Eleitorais."
+  "public_projects_five_text": "Microfrontend para gestão de contato entre Eleitores e Zonas Eleitorais.",
+  "job_experience_smart_title": "Engenheiro de Software Pleno I (Março de 2025 - Atualmente)",
+  "job_experience_smart_message_one": "Desenvolvimento e manutenção de dashboard administrativo para os Studios BioRitmo (Velocity, Race, Vidya, Tonus e OnePilates) e componentes modulares",
+  "job_experience_smart_message_two": "Integração eficiente com plataformas CMS",
+  "job_experience_smart_three": "Otimização da visualização de dados para usuários de negócio",
+  "job_experience_smart_message_four": "Colaboração com equipes multidisciplinares para soluções personalizadas",
+  "job_experience_smart_message_five": "Implementação de Ag-Grid e Ag-Charts para visualizações avançadas"
 }

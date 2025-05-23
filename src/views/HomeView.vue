@@ -1,12 +1,9 @@
 <script setup>
-import { onMounted } from 'vue'
 import LocaleChanger from '@/components/LocaleChanger.vue'
 
 function downloadItem(url) {
   window.open(url, '_blank')
 }
-
-onMounted(async () => {})
 </script>
 
 <template>
@@ -154,6 +151,28 @@ onMounted(async () => {})
             </h3>
             <div class="p-2 space-y-4">
               <div class="border-[#3B5998]">
+                <h4 class="font-bold">SMART FIT</h4>
+                <p class="text-sm text-gray-600">
+                  {{ $t('job_experience_smart_title') }}
+                </p>
+                <ul class="text-sm mt-2">
+                  <li>
+                   {{ $t('job_experience_smart_message_one') }}
+                  </li>
+                  <li>{{ $t('job_experience_smart_message_two') }}</li>
+                  <li>
+                    {{ $t('job_experience_smart_three') }}
+                  </li>
+                  <li>
+                    {{ $t('job_experience_smart_message_four') }}
+                  </li>
+                  <li>
+                    {{ $t('job_experience_smart_message_five') }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-[#3B5998]">
                 <h4 class="font-bold">ANGULAR E-COMMERCE</h4>
                 <p class="text-sm text-gray-600">
                   {{ $t('job_experience_angular_message') }}
@@ -243,7 +262,7 @@ onMounted(async () => {})
         </div>
 
         <!-- Coluna da direita -->
-        <div class="w-full lg:w-[25%] lg:flex-shrink-0">
+        <div class="w-full lg:w-[26%] lg:flex-shrink-0">
           <!-- Stack técnico -->
           <div class="bg-white border border-gray-300 p-2 mb-4">
             <h3 class="text-[#3B5998] font-bold text-sm mb-2">
