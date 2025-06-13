@@ -27,7 +27,7 @@ document.addEventListener('click', e => {
 })
 
 onMounted(() => {
-  const urlParams = new URLSearchParams(window.location.search)
+  /* const urlParams = new URLSearchParams(window.location.search)
   const langParam = urlParams.get('lang')
 
   if (langParam) {
@@ -44,7 +44,7 @@ onMounted(() => {
       }
     }
   }
-
+ */
   const savedLocale = localStorage.getItem('preferred_language')
   if (savedLocale) {
     const defaultCountry = country_codes.value.find(
