@@ -4,7 +4,7 @@ import QrCodeView from '../views/QrCodeView.vue'
 
 const router = createRouter({
   mode: 'history',
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/lucaspmarra.github.io/'),
   routes: [
     {
       path: '/',
