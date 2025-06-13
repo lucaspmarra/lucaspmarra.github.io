@@ -6,10 +6,7 @@ const text = shallowRef('Insira seu link aqui')
 const qrcode = useQRCode(text, {
   width: 300,
   margin: 2,
-  color: {
-    dark: '#6D84B4', // Cor do QR code (usando a cor do tema)
-    light: '#ffffff' // Cor de fundo
-  },
+
   errorCorrectionLevel: 'H' // Maior nível de correção de erro
 })
 </script>

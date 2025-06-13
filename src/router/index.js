@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import QrCodeView from '../views/QrCodeView.vue'
 
 const router = createRouter({
+  mode: 'history',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
