@@ -4,17 +4,6 @@ import LocaleChanger from '@/components/LocaleChanger.vue'
 function downloadItem(url) {
   window.open(url, '_blank')
 }
-
-import { useQRCode } from '@vueuse/integrations/useQRCode'
-import { shallowRef } from 'vue'
-
-const text = shallowRef('Insira seu link aqui')
-const qrcode = useQRCode(text, {
-  width: 300,
-  margin: 2,
-
-  errorCorrectionLevel: 'H' // Maior nível de correção de erro
-})
 </script>
 
 <template>
@@ -92,28 +81,10 @@ const qrcode = useQRCode(text, {
           class="flex-grow bg-white border rounded-tr-[60px] border-gray-300 p-4 md:mb-4"
         >
           <!-- Sobre -->
-          <div
-          class="flex-grow bg-white border rounded-tr-[60px] border-gray-300 p-8 md:mb-4 flex flex-col items-center justify-center"
-        >
-          <div class="w-full max-w-md space-y-6">
-            <div class="flex justify-center">
-              <img :src="qrcode" alt="QR Code" class="w-72 h-72" />
-            </div>
-            <div class="w-full">
-              <input
-                v-model="text"
-                type="text"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6D84B4] focus:border-transparent transition-all duration-200"
-                placeholder="Digite o texto para gerar o QR Code"
-              />
-            </div>
-          </div>
-        </div>
           <div class="mb-4 mt-4">
             <h3 class="text-[#3B5998] bg-[#E8EEF7] p-2 text-sm font-bold">
               sobre
             </h3>
-
             <div class="p-2 space-y-2">
               <div class="grid grid-cols-1 sm:grid-cols-[150px,1fr] text-sm">
                 <span class="text-gray-600">{{ $t('about_title') }}</span>
